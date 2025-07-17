@@ -10,6 +10,10 @@ val numerosEjercicio1 = listOf(1.0, 2.0, 3.0, 4.0, 6.0)   // Lista de números p
 // Ejercicio 2
 val numerosEjercicio2 = listOf(1, 2, 3, 4, 5, 77)
 
+// Ejercicio 3
+val cadenaEjercicio3 = "Anita lava la tina" // Cadena de texto para verificar si es un palíndromo
+fun isPalindrome(cadena: String) = cadena == cadena.reversed() // Verificar si una cadena es un palíndromo comparando la cadena original con su reverso
+
 fun main() {
     // Ejercicio 1
     println("Ejercicio 1: Calcular el promedio de una lista de números") // Mensaje descriptivo del ejercicio
@@ -22,4 +26,9 @@ fun main() {
 
     println("Ejercicio 2: Filtrar números impares de una lista") // Mensaje descriptivo del ejercicio
     println(numerosImpares)  // Imprimir la lista de números impares
+
+    // Ejercicio 3
+    println("Ejercicio 3: Verificar si una cadena es un palíndromo") // Mensaje descriptivo del ejercicio
+    println(isPalindrome(cadenaEjercicio3))  // Imprimir el resultado de la verificación del palíndromo
+
 }
