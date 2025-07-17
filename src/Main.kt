@@ -1,14 +1,13 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+// Ejercicio 1
+fun calcularPromedio(numbers: List<Double>): Double {
+    val suma = numbers.reduce { acc, num -> acc + num } // Sumar todos los números usando reduce
+    return suma / numbers.size  // Calcular el promedio dividiendo la suma por la cantidad de números
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+}
+
+val numeros = listOf(1.0, 2.0, 3.0, 4.0, 6.0)   // Lista de números para calcular el promedio, que debe ser de tipo Double
+
+fun main() {
+    // Ejercicio 1
+    println(calcularPromedio(numeros))  // Imprimir el resultado del promedio calculado
 }
