@@ -20,9 +20,7 @@ fun isPalindrome(cadena: String) = cadena.lowercase() == cadena.reversed().lower
 val nombresEjercicio4 = listOf("Ana", "Pedro", "María", "Juan", "Lucía") // Lista de nombres
 
 // Ejercicio 5
-fun performOperation(a: Int, b: Int, operacion: (Int, Int) -> Int): Int {
-    return operacion(a, b) // Realizar una operación entre dos números
-}
+val performOperation = { a: Int, b: Int -> a + b } // Función lambda para realizar una operación entre dos números
 
 // Ejercicio 6
 val personas = listOf(
@@ -65,7 +63,7 @@ fun main() {
 
     // Ejercicio 5
     println("Ejercicio 5: Realizar una operación entre dos números") // Mensaje descriptivo del ejercicio
-    println(performOperation(5, 3) { a, b -> a + b }) // Imprimir el resultado de la operación
+    println(performOperation(5, 3)) // Imprimir el resultado de la operación
 
     // Ejercicio 6
     println("Ejercicio 6: Mapear una lista de personas a estudiantes") // Mensaje descriptivo del ejercicio
