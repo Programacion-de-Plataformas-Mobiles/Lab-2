@@ -1,3 +1,5 @@
+import kotlin.random.Random
+
 // Ejercicio 1
 fun calcularPromedio(numbers: List<Double>): Double {
     val suma = numbers.reduce { acc, num -> acc + num } // Sumar todos los números usando reduce
@@ -20,6 +22,23 @@ val nombresEjercicio4 = listOf("Ana", "Pedro", "María", "Juan", "Lucía") // Li
 // Ejercicio 5
 fun performOperation(a: Int, b: Int, operacion: (Int, Int) -> Int): Int {
     return operacion(a, b) // Realizar una operación entre dos números
+}
+
+// Ejercicio 6
+val personas = listOf(
+    Person("Ana", 30, "Femenino"),
+    Person("Pedro", 25, "Masculino"),
+    Person("María", 28, "Femenino"),
+    Person("Juan", 22, "Masculino"),
+    Person("Lucía", 27, "Femenino")
+)
+val estudiantes by lazy {
+    mapeo(personas) // Usar lazy para optimizar el rendimiento al mapear la lista de personas a estudiantes
+    }
+fun mapeo(personas: List<Person>): List<Student> {
+    return personas.map {   // Mapear la lista de personas a una lista de estudiantes
+        Student(it.name, it.age, it.gender, Random.nextInt().toString())
+    }
 }
 
 fun main() {
@@ -48,4 +67,7 @@ fun main() {
     println("Ejercicio 5: Realizar una operación entre dos números") // Mensaje descriptivo del ejercicio
     println(performOperation(5, 3) { a, b -> a + b }) // Imprimir el resultado de la operación
 
+    // Ejercicio 6
+    println("Ejercicio 6: Mapear una lista de personas a estudiantes") // Mensaje descriptivo del ejercicio
+    println(estudiantes.map { "El Estudiante ${it.name} tiene ${it.age}" }) // Imprimir la lista de estudiantes con su nombre y edad usando map
 }
