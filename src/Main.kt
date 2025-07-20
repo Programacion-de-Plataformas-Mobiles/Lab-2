@@ -15,7 +15,12 @@ val cadenaEjercicio3 = "Sometemos" // Cadena de texto para verificar si es un pa
 fun isPalindrome(cadena: String) = cadena.lowercase() == cadena.reversed().lowercase() // Verificar si una cadena es un palíndromo comparando la cadena original con su reverso
 
 // Ejercicio 4
-val nombresEjercicio4 = listOf("Ana", "Pedro", "María", "Juan", "Lucía") // Lista de nombres para filtrar
+val nombresEjercicio4 = listOf("Ana", "Pedro", "María", "Juan", "Lucía") // Lista de nombres
+
+// Ejercicio 5
+fun performOperation(a: Int, b: Int, operacion: (Int, Int) -> Int): Int {
+    return operacion(a, b) // Realizar una operación entre dos números
+}
 
 fun main() {
     // Ejercicio 1
@@ -23,6 +28,7 @@ fun main() {
     println(calcularPromedio(numerosEjercicio1))  // Imprimir el resultado del promedio calculado
 
     // Ejercicio 2
+    println("Ejercicio 2: Filtrar números impares de una lista") // Mensaje descriptivo del ejercicio
     val numerosImpares by lazy {
         numerosEjercicio2.filter { it % 2 != 0} // Filtrar los números impares de la lista usando lazy para optimizar el rendimiento
     }
@@ -35,6 +41,11 @@ fun main() {
     println(isPalindrome(cadenaEjercicio3))  // Imprimir el resultado de la verificación del palíndromo
 
     // Ejercicio 4
+    println("Ejercicio 4: Imprimir un saludo personalizado para cada nombre en una lista") // Mensaje descriptivo del ejercicio
     println(nombresEjercicio4.map { "¡Hola, $it!" }) // Imprimir un saludo personalizado para cada nombre en la lista usando map
+
+    // Ejercicio 5
+    println("Ejercicio 5: Realizar una operación entre dos números") // Mensaje descriptivo del ejercicio
+    println(performOperation(5, 3) { a, b -> a + b }) // Imprimir el resultado de la operación
 
 }
